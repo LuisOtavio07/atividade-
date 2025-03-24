@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Vídeo - Futebol (Time: Bahia)</title>
+    <link rel="stylesheet" href="yt.css">
+    <script src="yt.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">YouTube</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Pesquisar sobre o Bahia">
+            <button id="searchButton">Pesquisar</button>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('searchButton').addEventListener('click', function () {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            if (searchTerm.includes('bahia')) {
+                alert(`Procurando por: ${searchTerm}`);
+            } else if (searchTerm.includes('vitória')) {
+            } else {
+                alert('O Bahia é maior que o Vitória! 🔵⚪🔴');
+            }
+        });
+    });
+        </script>
+        <div class="user-menu">
+            <button class="notification-btn">🔔</button>
+            <button class="profile-btn">👤</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="video-container">
+            <iframe width="100%" height="560" src="https://www.youtube.com/embed/7cFgrMdkzGo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h1 class="video-title">Melhores Momentos do Bahia - Futebol</h1>
+            <p class="video-description">
+                Assista aos melhores momentos do time Bahia em um jogo emocionante!
+            </p>
+            <section class="comments">
+                <h2>Comentários</h2>
+                <div id="commentSection">
+                    <div class="comment">
+                        <p><strong>João da Silva:</strong> Que golaço! Vamos Bahia!</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>Maria Oliveira:</strong> A torcida do Bahia está cada vez mais forte!</p>
+                    </div>
+                </div>
+                <input type="text" id="commentInput" placeholder="Escreva um comentário aqui" />
+                 <button id="postButton">Postar</button>
+                <div id="commentSection"></div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        document.getElementById('postButton').addEventListener('click', function () {
+                            const commentInput = document.getElementById('commentInput').value.trim();
+                            const commentSection = document.getElementById('commentSection');
+                
+                            if (commentInput) {
+                                const username = "Seu Nome";
+                                const newComment = document.createElement('div');
+                                newComment.classList.add('comment');
+                                newComment.innerHTML = `<p><strong>${username}:</strong> ${commentInput}</p>`;
+                                commentSection.appendChild(newComment);
+                
+                                document.getElementById('commentInput').value = ""; 
+                            } else {
+                                alert("Por favor, escreva um comentário antes de postar!");
+                            }
+                        });
+                    });
+                </script>
+                
+                </section>
+        </div>
+        
+
+        <aside class="suggestions">
+            <h2>Vídeos Relacionados</h2>
+            <div class="video-thumbnail">
+                <iframe width="100%" height="180" src="https://www.youtube.com/embed/8PZJlmS2fMM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Os Melhores Gols do Futebol Brasileiro</p>
+            </div>
+            <div class="video-thumbnail">
+                <iframe width="100%" height="180" src="https://www.youtube.com/embed/FFQjrC9pr2A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Os Grandes Momentos do Campeonato Brasileiro</p>
+            </div>
+            <div class="video-thumbnail">
+                <iframe width="100%" height="180" src="https://www.youtube.com/embed/dJkpeZHYX1g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Melhores Gols da Copa do Brasil 2024</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 - Plataforma de Vídeos Futebol</p>
+    </footer>
+</body>
+</html>
